@@ -33,3 +33,13 @@ Thumbs.db
 *.swo
 *.sublime-project
 *.sublime-workspace
+
+# Django collected static files
+/staticfiles/
+
+# Uploaded media
+/uploads/
+
+# Django migrations (except __init__.py)
+**/migrations/*.py
+!**/migrations/__init__.py
