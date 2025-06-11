@@ -1,0 +1,35 @@
+/.vscode
+/*/migrations
+db.sqlite3
+/*/__pycache__
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.env/
+venv/
+env/
+ENV/
+
+# Django specific
+*.log
+*.pot
+media/
+static/
+instance/
+local_settings.py
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
