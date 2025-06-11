@@ -41,7 +41,6 @@ ALLOWED_HOSTS = list(
 
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
 
-
 # Application definition
 
 INSTALLED_APPS = [
