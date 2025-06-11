@@ -1,45 +1,58 @@
-/.vscode
-/*/migrations
-db.sqlite3
-/*/__pycache__
-
+# ========================================
+# Python / Django
+# ========================================
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment
+# Virtual environments
 .env/
 venv/
 env/
 ENV/
 
-# Django specific
+# Django database
+db.sqlite3
 *.log
-*.pot
+
+# Django migrations - ignore all except __init__.py
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Static files from collectstatic
+/staticfiles/
+
+# Uploaded media files
+/uploads/
 media/
 static/
+
+# Instance and local settings
 instance/
 local_settings.py
 
-# System files
+# ========================================
+# Editor / IDE / System files
+# ========================================
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Mac system files
 .DS_Store
+
+# Windows system files
 Thumbs.db
 
-# IDE and editor files
-.idea/
+# Vim
 *.swp
 *.swo
+
+# Sublime Text
 *.sublime-project
 *.sublime-workspace
-
-# Django collected static files
-/staticfiles/
-
-# Uploaded media
-/uploads/
-
-# Django migrations (except __init__.py)
-**/migrations/*.py
-!**/migrations/__init__.py
