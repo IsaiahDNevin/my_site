@@ -7,7 +7,7 @@ from django.views.generic import View
 from .models import Post
 from .forms import CommentForm
 
-# Create your views her
+# Create your views here.
 
 class StartingPageView(ListView):
     template_name = "blog/index.html"

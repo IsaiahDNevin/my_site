@@ -5,19 +5,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static "app.css" %}">
-    {% block css_files %} {% endblock %}
+    <title>{% block title %}Isaiah's Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'tailwind.css' %}">
+    {% block css_files %}{% endblock %}
 </head>
-<body>
-    <header id="main-navigation">
-       <h1><a href="{% url 'starting-page' %}">Isaiah's Blog</a></h1> 
-       <nav>
-          <a href="{% url 'read-later'%}"> Stored Posts</a>
-          <a href="{% url 'posts-page'%}"> All Posts</a>
-       </nav>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <header id="main-navigation" class="bg-white shadow-md py-4 px-8 flex flex-col sm:flex-row items-center justify-between">
+        <h1 class="text-4xl font-bold text-blue-600 mb-2 sm:mb-0">
+            <a href="{% url 'starting-page' %}" class="hover:text-blue-800 transition">Isaiah's Blog</a>
+        </h1>
+        <nav class="flex gap-6 text-lg">
+            <a href="{% url 'read-later' %}" class="text-gray-700 hover:text-blue-500 transition">Stored Posts</a>
+            <a href="{% url 'posts-page' %}" class="text-gray-700 hover:text-blue-500 transition">All Posts</a>
+        </nav>
     </header>
-    {% block content %}
-    {% endblock %}
+    <main class="flex-1 container mx-auto px-4 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="bg-white border-t py-4 text-center text-gray-500 text-sm">
+        &copy; {{ now|date:"Y" }} Isaiah's Blog. All rights reserved.
+    </footer>
 </body>
 </html>
