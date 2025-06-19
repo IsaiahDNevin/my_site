@@ -1,40 +1,39 @@
 {% extends "base.html" %}
 {% load static %}
 
-  {% block title %}
-   My Blog
-  {% endblock %}
+{% block title %}
+  My Blog
+{% endblock %}
 
-  {% block css_files %}
-  <link rel="stylesheet" href="{% static 'blog/post.css' %}" />
-  <link rel="stylesheet" href="{% static 'blog/index.css' %}" />
-  {% endblock %}
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'tailwind.css' %}">
+{% endblock %}
 
-  {% block content %}
-    <section id="welcome">
-      <header>
-        <img src="{% static 'blog/images/isaiah.png'%}" alt="Isaiah - The Author Of This Blog" />
-        <h2> ISAIAH'S BLOG </h2>
-      </header>
-      <p>Hi, I am Isaiah and I love to blog about tech and guns</p>
-    </section>
+{% block content %}
+  <section id="welcome" class="max-w-2xl mx-auto bg-white rounded shadow p-8 mt-8 mb-8 text-center">
+    <header>
+      <img src="{% static 'blog/images/isaiah.png'%}" alt="Isaiah - The Author Of This Blog" class="w-32 h-32 rounded-full mx-auto mb-4 shadow" />
+      <h2 class="text-3xl font-bold text-blue-700 mb-2">ISAIAH'S BLOG</h2>
+    </header>
+    <p class="text-gray-600">Hi, I am Isaiah and I love to blog about tech and guns</p>
+  </section>
 
-    <section id="latest-posts">
-      <h2>My Latest Thoughts</h2>
-      <ul>
-        {% for post in posts %}
-          {% include "blog/includes/post.html" %}
-        {% endfor %}
-      </ul>
-    </section>
+  <section id="latest-posts" class="max-w-2xl mx-auto mb-8">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">My Latest Thoughts</h2>
+    <ul class="space-y-6">
+      {% for post in posts %}
+        {% include "blog/includes/post.html" %}
+      {% endfor %}
+    </ul>
+  </section>
 
-    <section id="about">
-      <h2> What I Do</h2>
-      <p>
-        I love programming, and i really enjoy teaching others!
-      </p>
-      <p>
-        My goal is to keep growing as a Dev.
-      </p>
-    </section>
-  {% endblock %}
+  <section id="about" class="max-w-2xl mx-auto bg-white rounded shadow p-8 mb-8">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-2">What I Do</h2>
+    <p class="text-gray-600 mb-2">
+      I love programming, and I really enjoy teaching others!
+    </p>
+    <p class="text-gray-600">
+      My goal is to keep growing as a Dev.
+    </p>
+  </section>
+{% endblock %}
