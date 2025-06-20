@@ -34,8 +34,8 @@ db.sqlite3
 # Uploaded media files
 /uploads/
 media/
-static/
-
+static/*
+!static/tailwind.css
 # Instance and local settings
 instance/
 local_settings.py
